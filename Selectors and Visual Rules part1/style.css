@@ -1,0 +1,44 @@
+/*font-family:字体样式*/
+p {
+  font-family: Arial;
+}
+
+h1 {
+  color: maroon;
+}
+
+h2.destination {
+  font-family: cursive;
+}
+
+/*!important:覆盖全部符合条件的区域，在这就是只要有h5的地方就是紫色的样式
+其他附带h5的其他颜色不会应用，但是不推荐这种用法，所以正常编写时，不要使用这个样式*/
+h5 {
+  color:rebeccapurple !important;
+}
+p,h5 {
+  font-family:Georgia;
+}
+.title {
+  color: teal;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+.publish-time {
+  color: gray;
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+/*text-transform:字母大小写样式*/
+.capitalize {
+  text-transform: capitalize;
+}
+
+.description h5 {
+  color: teal;
+}
