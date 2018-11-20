@@ -1,0 +1,93 @@
+1  Monospace、Serif和Sans-Serif 三种字体是默认所有浏览器都可以使用的
+当某种字体不可用时，你可以让浏览器自动降级到另一种字体
+eg：想让段落的字体为Helvetica，同时想在Helvetica字体不可用时自动降级使用Sans-Serif字体
+p {
+  font-family: Helvetica, Sans-Serif;
+}
+
+
+2  CSS边框属性有style（样式）、color（颜色）、width（宽度）、height（高度）、radius（半径)等
+border-radius可以使边框变成圆的，赋值像素一般是把直角变为合适的圆角，还可以直接用百分比，一般50%就是圆形
+eg：设置啊一个html元素的边框颜色为红色、宽度为5px、样式为固体
+<style>
+  .border {
+    border-color:red;
+    border-width:5px;
+    border-style:solid
+}
+</style>
+
+
+3  当多个class应用到一个元素的时候，只需要在多个class之间用空格分开即可
+eg：<img class="class1 class2 class3...">
+
+
+4  有时你想为你的网站添加一个a元素，但此时你还不知道要将它们链接到哪儿，可以使用固定链接
+将a的href属性值替换为#，别名为hash
+图片嵌套进a元素，可以把光标指针变成手形指针
+eg：<a href="#"><img src="......"></a>
+
+
+5  Text input(文本输入框)是用来获得用户输入的比较好的一个方式
+eg：<input type="text"> 创建了一个用户输入框，input是自关闭元素
+
+
+6  placeholder text（占位符）是用户在input(输入)框输入任何东西之前放置在input(输入)框中的预定义文本
+eg：<input type="text" placeholder="提示语言">（在输入框底部会显示这个文本）
+
+
+7  HTML构建可以跟服务器交互的Web表单(form)，通过给form元素添加一个action属性来达到此目的
+    action属性的值指定了表单提交到服务器的地址
+eg：<form action="/url-where-you-want-to-submit-form-data"></form>
+    为form添加一个submit(提交)按钮，点击这个按钮，表单中的数据将会被发送到通过action属性指定的地址上
+eg：<button type="submit">Submit</button>
+    把一个文本输入字段设置为必填项，在input元素中加上required属性（requirede在Safari浏览器中不起作用）
+eg：<input type="text" required>
+
+
+8  radio button（单选按钮）是input输入框的一种类型，每一个单选按钮都应该嵌套在它自己的label(标签)元素中，
+所有关联的单元按钮都应该使用相同的name属性；checkboxes（复选按钮），用法同单选
+eg：<label><input type="radio" name="sxx">num1</label>
+    checked属性，设置复选按钮和单选按钮默认被选中
+eg：<input type="radio" name="test-name" checked>
+
+
+9  background-color 属性  设置一个元素的背景颜色
+
+
+10  有三个影响HTML元素布局的重要属性：padding(内边距)、margin(外边距)、border(边框)
+    padding控制元素内容（content）和元素边框（border）之间的距离，padding可通过padding-top、
+padding-right、padding-bottom、padding-left来控制元素上下左右的padding
+    margin控制border和元素实际所占空间的距离，他也可以用过上下左右控制每一个边的不用margin
+
+
+11  在 <style> 部分中 class 声明的顺序却非常重要，第二个声明总是比第一个具有优先权，相同属性会被后面的覆盖
+（浏览器读取CSS是从上到下，当发生冲突的时候，会使用最后的css声明）
+（注：①id 属性总是具有更高的优先级 ②行内样式会覆盖style中定义的所有css ③声明的时候加上关键字!important确保该元素会使用这个参数）
+
+
+12  Bootstrap框架（响应式设计）—— 根据屏幕的大小调整HTML元素的大小，只需要将以下代码放在HTML开头
+<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+bootstrap 按钮  给button元素设置 class=“btn” 如果需要变成块级元素（按钮延伸并填满整个水平空间）
+设置 class=“btn-block”(用btn-block的同时还是需要btn属性的)
+深蓝色 btn-primary 是应用的主要颜色，被用在那些用户主要采取的操作上，设置class=“btn-primary”
+浅蓝色 btn-info 被用在那些用户可能会采取的操作上 设置 class=“btn-info”
+白   色 btn-default 用法同上，记得，每一个前面都需要有btn
+红   色 btn-danger 被用来提醒用户该操作具有“破坏性” 例如删除 设置 class=“btn-danger”
+bootstrap 12列网格布局 class=“row”代表一行 class="col-xs-4"代表在一行里面，这个元素占4列宽（一行一共12列）
+其中xs应用与较小屏幕（如手机）、md应用中等大小屏幕（如笔记本电脑）
+bootstrap 自适应屏幕大小的图片 给图片设置class="img-responsive"
+bootstrap 文字居中 class=“text-center” 文字蓝色 class="text-primary"
+bootstrap 容器用于100%宽屏，占全部视口 设置 class=“container-fluid”
+bootstrap 容器用于固定宽度并支持响应式布局  设置 class=“container”
+Bootstrap 有一个 class 属性叫做 well，它的作用是为设定的列创造出一种视觉上的深度感
+span 元素 可以把几个元素放在一起 且为一个元素的不同部分指定样式
+eg：<p>Top 3 things cats <span class = "text-danger">hate:</span></p>这里就把hate：变成了红色
+
+
+13 Font Awesome 是一个非常方便的图标库 这些图标都是矢量图形 被保存在 .svg 的文件格式中 只要早HTML 头部增加下列代码
+<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+i 元素现在一般用来指代图标 将 Font Awesome 中的 class 属性添加到 i 元素中可以把它变成一个图标
+Font Awesome 库 增加 thumbs-up（点赞） 图标到按钮中 方法是在i 元素中增加 class 属性 fa 和 fa-thumbs-up
+（info-circle是信息，trash是删除 fa-paper-plane是提交（小飞机按钮）这些是常用的）
+
